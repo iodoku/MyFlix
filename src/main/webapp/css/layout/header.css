@@ -1,0 +1,465 @@
+:root {
+            --minion-yellow: #FFDA1A;       /* 미니언 시그니처 옐로우 */
+            --minion-yellow-hover: #F5C400;
+            --minion-denim: #2563EB;        /* 멜빵바지 데님 블루 */
+            --minion-denim-hover: #1D4ED8;
+            --minion-dark: #1C1C1E;         /* 고글 스트랩 딥 챠콜 */
+            --minion-bg: #FFFDF0;           /* 바나나 크림 배경 */
+            --minion-text: #1E293B;
+        }
+
+        body {
+            background-color: var(--minion-bg);
+            font-family: 'Noto Sans KR', sans-serif;
+            color: var(--minion-text);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* 1. 상단 헤더 (미니언 고글 스트랩 톤) */
+        .custom-navbar {
+		    background-color: #FFE680;
+		    padding: 14px 28px;
+		    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+		    border-bottom: 4px solid var(--minion-yellow);
+		    position: relative;
+		}
+		
+		.review-nav {
+		    position: absolute;
+		    left: 50%;
+		    top: 50%;
+		    width: 450px;
+		    display: flex;
+		    justify-content: center;
+		    gap: 12px;
+		    
+		    transform: translate(-50%, -50%);
+		}
+
+        /* 로고: MyFlix */
+        .navbar-brand-logo {
+            font-family: 'Outfit', 'Jua', sans-serif;
+            font-weight: 900;
+            font-size: 1.4rem;
+            color: #ffffff;
+            text-decoration: none;
+            background: #2C2C2E;
+            border: 2px solid var(--minion-yellow);
+            padding: 6px 20px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .navbar-brand-logo .logo-img {
+            width: 34px;
+		    height: 34px;
+		    border-radius: 50%;
+		    object-fit: cover;
+		    border: 2px solid var(--minion-yellow);
+		    background: #fff;
+		    transition: all 0.25s ease;
+        }
+        
+        .navbar-brand-logo:hover .logo-img {
+            transform: rotate(10deg) scale(1.08);
+    		border-color: var(--minion-dark);
+        }
+        
+
+        .navbar-brand-logo .logo-highlight {
+            color: var(--minion-yellow);
+        }
+
+        .navbar-brand-logo:hover {
+            transform: scale(1.08) rotate(-2deg);
+            background: var(--minion-yellow);
+            color: var(--minion-dark);
+            border-color: var(--minion-yellow);
+        }
+
+        .navbar-brand-logo:hover .logo-highlight {
+            color: var(--minion-dark);
+        }
+
+        /* 통통 튀는 미니언 옐로우 버튼 */
+        .nav-pill-btn {
+            background-color: #FFE066;
+            color: var(--minion-dark);
+            font-size: 1rem;
+            font-weight: 800;
+            padding: 10px 26px;
+            border-radius: 25px;
+            border: none;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-block;
+            white-space: nowrap;
+            box-shadow: 0 4px 0px #D9A800;
+        }
+
+        .nav-pill-btn:hover {
+            background-color: #FFD54F;
+            color: var(--minion-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 7px 14px rgba(255, 218, 26, 0.45);
+        }
+
+        /* 회원가입/포인트 데님 블루 버튼 */
+        .nav-pill-btn.denim-btn {
+            background-color: var(--minion-denim);
+            color: #ffffff;
+            box-shadow: 0 4px 0px #1D4ED8;
+        }
+
+        .nav-pill-btn.denim-btn:hover {
+            background-color: var(--minion-denim-hover);
+            color: #ffffff;
+            box-shadow: 0 7px 14px rgba(37, 99, 235, 0.45);
+        }
+
+        /* 2. 풀위드(Full-Width) 미니언즈 토론 메인 이미지 */
+        .hero-banner {
+            width: 100vw;
+            height: 50vh;
+            min-height: 350px;
+            position: relative;
+            overflow: hidden;
+            background-color: #FEF08A;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* 하단 부드러운 오버레이 */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                180deg, 
+                rgba(28, 28, 30, 0.1) 0%, 
+                rgba(255, 253, 240, 0) 65%, 
+                rgba(255, 253, 240, 1) 100%
+            );
+            pointer-events: none;
+        }
+
+        /* 3. 하단 미니언즈 메인 타이틀 영역 */
+        .hero-content-section {
+            padding: 45px 20px 75px 20px;
+            text-align: center;
+        }
+
+        /* 미니언 뱃지 */
+        .minion-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: 'Jua', sans-serif;
+            font-size: 1.15rem;
+            color: #1E3A8A;
+            background: #DBEAFE;
+            padding: 6px 22px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            border: 2px dashed #93C5FD;
+        }
+
+        .hero-main-title {
+            font-family: 'Jua', 'Noto Sans KR', sans-serif;
+            font-size: 3.4rem;
+            color: #0F172A;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+        }
+
+        .hero-sub-text {
+            font-size: 1.15rem;
+            color: #475569;
+            font-weight: 500;
+            max-width: 520px;
+            margin: 0 auto 28px auto;
+            line-height: 1.65;
+            word-break: keep-all;
+        }
+
+        /* 이모지 구분선 */
+        .minion-divider {
+            font-size: 1.6rem;
+            letter-spacing: 16px;
+        }
+
+        /* 반응형 대응 */
+        @media (max-width: 992px) {
+            .custom-navbar {
+                padding: 12px 18px;
+            }
+            .hero-main-title {
+                font-size: 2.5rem;
+            }
+            .hero-banner {
+                height: 38vh;
+                min-height: 290px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-main-title {
+                font-size: 2.1rem;
+            }
+            .hero-content-section {
+                padding: 35px 15px 55px 15px;
+            }
+            .nav-pill-btn {
+                padding: 6px 16px;
+                font-size: 0.82rem;
+            }
+        }
+        
+.nav-user {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 8px 17px;
+
+    background-color: #DBEAFE;
+    color: #1E3A8A;
+
+    border: 2px solid #60A5FA;
+    border-radius: 25px;
+
+    font-size: 0.92rem;
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    box-shadow: 0 4px 0 #93C5FD;
+
+    transition: all 0.25s
+        cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 마우스 올렸을 때 */
+.nav-user:hover {
+    background-color: #BFDBFE;
+    border-color: #2563EB;
+    color: #1E3A8A;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 7px 14px rgba(37, 99, 235, 0.3);
+}
+
+/* =========================================
+   헤더 반응형
+========================================= */
+
+@media (max-width: 1400px) {
+
+    .custom-navbar {
+        padding: 10px 18px;
+    }
+
+    .custom-navbar > .container-fluid {
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+
+    /* 가운데 메뉴 absolute 해제 */
+    .review-nav {
+        position: static;
+        transform: none;
+        width: auto;
+        flex: 1;
+        min-width: 0;
+        gap: 7px !important;
+    }
+
+    /* 모든 버튼 크기 축소 */
+    .nav-pill-btn {
+        font-size: 0.88rem;
+        padding: 7px 17px;
+        border-radius: 20px;
+    }
+
+    /* 닉네임 영역 */
+    .nav-user {
+        font-size: 0.84rem;
+        padding: 6px 13px;
+        gap: 5px;
+    }
+}
+
+
+/* =========================================
+   태블릿
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .custom-navbar {
+        padding: 9px 14px;
+    }
+
+    .custom-navbar > .container-fluid {
+        justify-content: center !important;
+        gap: 7px;
+    }
+
+    /* 로고 */
+    .custom-navbar > .container-fluid > div:first-child {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* 가운데 메뉴 */
+    .review-nav {
+        order: 2;
+        flex: 0 0 auto;
+        justify-content: center;
+        gap: 6px !important;
+    }
+
+    /* 오른쪽 영역 */
+    .custom-navbar > .container-fluid > div:last-child {
+        order: 3;
+    }
+
+    /* 버튼 더 축소 */
+    .nav-pill-btn {
+        font-size: 0.78rem;
+        padding: 6px 13px;
+        border-radius: 18px;
+        box-shadow: 0 3px 0 #D9A800;
+    }
+
+    /* 닉네임 */
+    .nav-user {
+        font-size: 0.76rem;
+        padding: 5px 10px;
+        border-radius: 18px;
+        box-shadow: 0 3px 0 #93C5FD;
+    }
+
+    /* 로고 */
+    .navbar-brand-logo {
+        font-size: 1.2rem;
+        padding: 5px 14px;
+        gap: 5px;
+    }
+
+    .navbar-brand-logo .logo-img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+/* =========================================
+   모바일
+========================================= */
+
+@media (max-width: 600px) {
+
+    .custom-navbar {
+        padding: 7px 8px;
+    }
+
+    .custom-navbar > .container-fluid {
+        gap: 5px;
+    }
+
+    /* 가운데 메뉴 */
+    .review-nav {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 5px !important;
+    }
+
+    /* 버튼 */
+    .nav-pill-btn {
+        font-size: 0.70rem;
+        padding: 5px 10px;
+        border-radius: 15px;
+        box-shadow: 0 2px 0 #D9A800;
+    }
+
+    /* 로그인 영역 */
+    .custom-navbar > .container-fluid > div:last-child {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 5px !important;
+    }
+
+    /* 닉네임 */
+    .nav-user {
+        font-size: 0.70rem;
+        padding: 5px 9px;
+        border-radius: 15px;
+        box-shadow: 0 2px 0 #93C5FD;
+    }
+
+    /* 로고 */
+    .navbar-brand-logo {
+        font-size: 1rem;
+        padding: 4px 11px;
+        gap: 4px;
+    }
+
+    .navbar-brand-logo .logo-img {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+
+/* =========================================
+   아주 작은 모바일
+========================================= */
+
+@media (max-width: 400px) {
+
+    .nav-pill-btn {
+        font-size: 0.64rem;
+        padding: 4px 8px;
+    }
+
+    .nav-user {
+        font-size: 0.64rem;
+        padding: 4px 8px;
+    }
+
+    .review-nav {
+        gap: 4px !important;
+    }
+
+    .custom-navbar > .container-fluid > div:last-child {
+        gap: 4px !important;
+    }
+
+    .navbar-brand-logo {
+        font-size: 0.9rem;
+        padding: 3px 9px;
+    }
+
+    .navbar-brand-logo .logo-img {
+        width: 23px;
+        height: 23px;
+    }
+}

@@ -1,0 +1,117 @@
+:root {
+            --minion-yellow: #FFDA1A;
+            --minion-denim: #2563EB;
+            --minion-denim-hover: #1D4ED8;
+            --minion-dark: #1C1C1E;
+            --minion-bg: #FFFDF0;
+            --minion-text: #1E293B;
+        }
+
+        body {
+            background-color: var(--minion-bg);
+            font-family: 'Noto Sans KR', sans-serif;
+            color: var(--minion-text);
+        }
+
+        /* 카드 컨테이너 */
+        .login-card {
+            background-color: #FFFFFF;
+            border: 3px solid #FEF08A !important;
+            border-radius: 24px !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        .login-title {
+            font-family: 'Jua', 'Noto Sans KR', sans-serif;
+            font-size: 2.2rem;
+            color: var(--minion-dark);
+            text-align: center;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 360px;
+        }
+
+        /* Input 스타일링 */
+        .form-control-custom {
+            border: 2px solid #E2E8F0 !important;
+            border-radius: 14px !important;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .form-control-custom:focus {
+            border-color: var(--minion-yellow) !important;
+            box-shadow: 0 0 0 4px rgba(255, 218, 26, 0.25) !important;
+            outline: none;
+        }
+
+        /* 💙 충돌 방지 및 입체감 적용된 데님 블루 로그인 버튼 */
+        button.btn-minion-login {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            background-color: var(--minion-denim) !important;
+            color: #FFFFFF !important;
+            font-weight: 800 !important;
+            font-size: 1.1rem !important;
+            height: 52px !important;
+            border-radius: 30px !important;
+            border: none !important;
+            box-shadow: 0 5px 0px #1E40AF, 0 8px 15px rgba(37, 99, 235, 0.35) !important;
+            transition: all 0.15s ease-in-out !important;
+            cursor: pointer !important;
+            text-decoration: none !important;
+        }
+
+        button.btn-minion-login:hover {
+            background-color: var(--minion-denim-hover) !important;
+            color: #FFFFFF !important;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 0px #1E40AF, 0 12px 20px rgba(37, 99, 235, 0.45) !important;
+        }
+
+        button.btn-minion-login:active {
+            transform: translateY(3px);
+            box-shadow: 0 2px 0px #1E40AF, 0 4px 8px rgba(37, 99, 235, 0.25) !important;
+        }
+
+        /* ID/PW 찾기 보조 버튼 */
+        a.btn-minion-sub {
+            display: block !important;
+            background-color: #F8FAFC !important;
+            color: #475569 !important;
+            font-weight: 700 !important;
+            border-radius: 12px !important;
+            border: 2px solid #CBD5E1 !important;
+            text-decoration: none !important;
+            transition: all 0.2s ease;
+        }
+
+        a.btn-minion-sub:hover {
+            background-color: #E2E8F0 !important;
+            color: var(--minion-dark) !important;
+        }
+
+        /* 에러 메시지 바 */
+		.login-error-msg {
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    min-height: 40px;          /* 에러 메시지 영역 높이 고정 */
+		    padding: 8px 12px;
+		    border-radius: 10px;
+		    font-weight: 600;
+		    font-size: 0.88rem;
+		    color: #DC2626;
+		    background-color: #FEF2F2;
+		    border: 1px solid #FCA5A5;
+		    transition: all 0.2s ease;
+		}
+		
+		/* JS로 텍스트가 전달되지 않아 태그가 비어있을 때 스타일 숨김 */
+		.login-error-msg:empty {
+		    background-color: transparent;
+		    border-color: transparent;
+		}

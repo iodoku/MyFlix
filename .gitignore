@@ -1,0 +1,19 @@
+/.metadata/
+.classpath
+.project
+.settings/
+build/
+bin/
+
+# 빌드 및 임시 파일
+/target/
+*.log
+
+# 개인 설정 및 인증 정보
+.env
+.env.*
+!.env.example
+
+# 운영체제 및 IDE 임시 파일
+.DS_Store
+Thumbs.db

@@ -1,0 +1,177 @@
+:root {
+            --minion-yellow: #FFDA1A;
+            --minion-yellow-hover: #F5C400;
+            --minion-denim: #2563EB;
+            --minion-denim-hover: #1D4ED8;
+            --minion-dark: #1C1C1E;
+            --minion-bg: #FFFDF0;
+            --minion-text: #1E293B;
+        }
+
+        body {
+            background-color: var(--minion-bg);
+            font-family: 'Noto Sans KR', sans-serif;
+            color: var(--minion-text);
+        }
+
+        /* 카드 컨테이너 */
+        .find-card {
+            background-color: #FFFFFF;
+            border: 3px solid #FEF08A !important;
+            border-radius: 24px !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        .find-main-title {
+            font-family: 'Jua', 'Noto Sans KR', sans-serif;
+            font-size: 2.2rem;
+            color: var(--minion-dark);
+            text-align: center;
+        }
+
+        /* 섹션 소제목 */
+        .section-title {
+            font-family: 'Jua', 'Noto Sans KR', sans-serif;
+            font-size: 1.35rem;
+            color: #1E3A8A;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* 폼 행(Row) 라벨 고정 */
+        .form-row-custom {
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+            margin-bottom: 1rem !important;
+        }
+
+        .form-label-custom {
+            width: 90px !important;
+            flex-shrink: 0 !important;
+            font-weight: 700 !important;
+            color: var(--minion-dark) !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* Input 너비 고정 규격 */
+        .input-email-id {
+            flex: 1 1 100px !important;
+            max-width: 140px !important;
+        }
+
+        .input-email-domain {
+            flex: 1 1 110px !important;
+            max-width: 150px !important;
+        }
+
+        .select-email-domain {
+            flex: 1 1 120px !important;
+            max-width: 140px !important;
+        }
+
+        .input-auth-code {
+            width: 160px !important;
+            flex-shrink: 0 !important;
+        }
+
+        /* Input & Select 커스텀 */
+        .form-control-custom, .form-select-custom {
+            border: 2px solid #E2E8F0 !important;
+            border-radius: 12px !important;
+            font-weight: 500 !important;
+            padding: 7px 12px !important;
+            transition: all 0.2s ease;
+        }
+
+        .form-control-custom:focus, .form-select-custom:focus {
+            border-color: var(--minion-yellow) !important;
+            box-shadow: 0 0 0 4px rgba(255, 218, 26, 0.25) !important;
+            outline: none;
+        }
+
+        /* 💛 노란색 입체 보조 버튼 */
+        button.btn-minion-sub {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            background-color: #FFE066 !important;
+            color: var(--minion-dark) !important;
+            font-weight: 800 !important;
+            font-size: 0.85rem !important;
+            padding: 8px 14px !important;
+            border-radius: 12px !important;
+            border: none !important;
+            box-shadow: 0 3px 0px #D9A800 !important;
+            transition: all 0.15s ease-in-out !important;
+            cursor: pointer !important;
+            white-space: nowrap !important;
+            flex-shrink: 0 !important;
+        }
+
+        button.btn-minion-sub:hover {
+            background-color: #FFD54F !important;
+            transform: translateY(-1px);
+        }
+
+        button.btn-minion-sub:active {
+            transform: translateY(2px);
+            box-shadow: 0 1px 0px #D9A800 !important;
+        }
+
+        /* 💙 데님 블루 메인 버튼 */
+        button.btn-minion-main {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            background-color: var(--minion-denim) !important;
+            color: #FFFFFF !important;
+            font-weight: 800 !important;
+            font-size: 0.88rem !important;
+            padding: 8px 16px !important;
+            border-radius: 12px !important;
+            border: none !important;
+            box-shadow: 0 3px 0px #1E40AF !important;
+            transition: all 0.15s ease-in-out !important;
+            cursor: pointer !important;
+            white-space: nowrap !important;
+            flex-shrink: 0 !important;
+        }
+
+        button.btn-minion-main:hover {
+            background-color: var(--minion-denim-hover) !important;
+            transform: translateY(-1px);
+        }
+
+        button.btn-minion-main:active {
+            transform: translateY(2px);
+            box-shadow: 0 1px 0px #1E40AF !important;
+        }
+
+        /* 하단 로그인 돌아가기 버튼 */
+        a.btn-minion-cancel {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            background-color: #F1F5F9 !important;
+            color: #475569 !important;
+            font-weight: 700 !important;
+            font-size: 0.95rem !important;
+            min-width: 150px;
+            height: 44px !important;
+            border-radius: 30px !important;
+            border: 2px solid #CBD5E1 !important;
+            text-decoration: none !important;
+        }
+
+        a.btn-minion-cancel:hover {
+            background-color: #E2E8F0 !important;
+            color: var(--minion-dark) !important;
+        }
+
+        .minion-hr {
+            border-top: 2px dashed #FDE047;
+            opacity: 1;
+            margin: 1.8rem 0;
+        }

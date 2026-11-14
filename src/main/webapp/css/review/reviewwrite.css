@@ -1,0 +1,267 @@
+:root {
+    --minion-yellow: #FFDA1A;
+    --minion-yellow-hover: #F5C400;
+    --minion-denim: #2563EB;
+    --minion-denim-hover: #1D4ED8;
+    --minion-dark: #1C1C1E;
+    --minion-bg: #FFFDF0;
+    --minion-text: #1E293B;
+}
+
+body {
+    background-color: var(--minion-bg);
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--minion-text);
+}
+
+/* 🚀 메인 카드 컨테이너 */
+.write-card {
+    max-width: 980px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    border: 3px solid #FEF08A;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.write-title {
+    font-family: 'Jua', 'Noto Sans KR', sans-serif;
+    font-size: 2.2rem;
+    color: var(--minion-dark);
+    text-align: center;
+}
+
+/* 이미지 첨부 박스 */
+.image-upload-box {
+    width: 100%;
+    height: 280px; 
+    background-color: #FFFDF0;
+    border: 2.5px dashed #FDE047;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #854D0E;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    gap: 8px;
+    background-size: cover;
+    background-position: center;
+}
+
+.image-upload-box:hover {
+    background-color: #FEF9C3;
+    border-color: #EAB308;
+    transform: translateY(-2px);
+}
+
+/* 🖼️ 이미지 업로드 이모지 아이콘 (인라인 스타일 대체) */
+.image-upload-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+/* 업로드 박스 안을 가득 채우는 이미지 스타일 */
+.preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 박스 비율에 맞춰 깔끔하게 채움 */
+    border-radius: 16px;
+}
+
+/* upload-placeholder 내부 요소 세로 정렬 */
+.upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* previewImg가 d-none이 아닐 때 라벨 테두리 제거 */
+.image-upload-box:has(#previewImg:not(.d-none)) {
+    border: none !important;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+/* Input & Select 알약 스타일 커스텀 */
+.input-pill-custom {
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    color: var(--minion-dark);
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 10px 14px;
+    transition: all 0.2s ease;
+}
+
+.input-pill-custom:focus {
+    border-color: var(--minion-yellow);
+    box-shadow: 0 0 0 4px rgba(255, 218, 26, 0.25);
+    outline: none;
+}
+
+.select-pill-custom {
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    border: 2px solid #E2E8F0;
+    color: var(--minion-dark);
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 10px 12px;
+    text-align-last: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.select-pill-custom:focus {
+    border-color: var(--minion-yellow);
+    box-shadow: 0 0 0 4px rgba(255, 218, 26, 0.25);
+    outline: none;
+}
+
+/* 제목 입력 박스 */
+.title-input-box {
+    background-color: #FFFBEB;
+    border: 2px solid #FDE047;
+    border-radius: 14px;
+    padding: 14px 16px; 
+    text-align: center;
+    font-family: 'Jua', 'Noto Sans KR', sans-serif;
+    font-size: 1.25rem;
+    color: var(--minion-dark);
+}
+
+.title-input-box:focus {
+    border-color: var(--minion-yellow);
+    box-shadow: 0 0 0 4px rgba(255, 218, 26, 0.25);
+    outline: none;
+}
+
+/* 장르 라벨 뱃지 */
+.genre-label-pill {
+    background-color: #1E3A8A;
+    color: #FFFFFF;
+    font-family: 'Jua', sans-serif;
+    border-radius: 20px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+/* 본문 텍스트 영역 */
+.review-textarea {
+    width: 100%;
+    height: 420px;
+    background-color: #FAFAFA;
+    border: 2px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 24px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--minion-text);
+    resize: none;
+    transition: all 0.2s ease;
+}
+
+.review-textarea:focus {
+    outline: none;
+    border-color: var(--minion-yellow);
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(255, 218, 26, 0.25);
+}
+
+/* 본문 바이트 카운터 & 경고 영역 */
+.byte-counter-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6px;
+    padding: 0 8px;
+    font-size: 0.88rem;
+}
+
+.byte-warning-text {
+    color: #DC2626;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin: 0;
+    display: none; /* 기본 숨김 */
+}
+
+.byte-count-text {
+    margin-left: auto;
+    color: #64748B;
+    font-weight: 500;
+}
+
+.byte-current {
+    font-weight: 700;
+    color: var(--minion-dark);
+    transition: color 0.2s ease;
+}
+
+/* 4000바이트 도달 시 빨간색 강조 */
+.byte-current.text-danger {
+    color: #DC2626 !important;
+}
+
+/* 하단 뒤로가기 버튼 */
+button.btn-minion-cancel, a.btn-minion-cancel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F1F5F9;
+    color: #475569;
+    font-weight: 700;
+    font-size: 1rem;
+    width: 100%;
+    height: 52px;
+    border-radius: 30px;
+    border: 2px solid #CBD5E1;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+button.btn-minion-cancel:hover, a.btn-minion-cancel:hover {
+    background-color: #E2E8F0;
+    color: var(--minion-dark);
+}
+
+/* 💙 데님 블루 메인 버튼 (작성하기) */
+button.btn-minion-main {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--minion-denim);
+    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 1.05rem;
+    width: 100%;
+    height: 52px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 4px 0px #1E40AF, 0 6px 12px rgba(37, 99, 235, 0.3);
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+}
+
+button.btn-minion-main:hover {
+    background-color: var(--minion-denim-hover);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0px #1E40AF, 0 10px 16px rgba(37, 99, 235, 0.4);
+}
+
+button.btn-minion-main:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0px #1E40AF;
+}

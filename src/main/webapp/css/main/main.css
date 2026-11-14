@@ -1,0 +1,101 @@
+/* ---------- Hero (full-bleed) ---------- */
+.hero{
+  position:relative;
+  width:100%;
+  height:100vh;
+  min-height:520px;
+  overflow:hidden;
+  padding:0;
+}
+
+.hero img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,
+    rgba(31,46,53,0.35) 0%,
+    rgba(31,46,53,0.55) 55%,
+    rgba(31,46,53,0.8) 100%);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 1.5rem;
+}
+
+.hero-title{
+  color:#F3F1EA;
+  font-size:clamp(2.4rem, 5vw, 4rem);
+  font-weight:600;
+  line-height:1.35;
+  letter-spacing:-0.01em;
+  text-shadow:0 4px 24px rgba(0,0,0,0.25);
+}
+.hero-title em{
+  color:#E7B85C;
+  font-style:italic;
+  font-weight:500;
+}
+
+.hero-caption{
+  position:absolute;
+  left:1.6rem;
+  bottom:1.4rem;
+  z-index:2;
+  color:#F3F1EA;
+  font-size:0.85rem;
+  letter-spacing:0.04em;
+  opacity:0.85;
+}
+
+@media (max-width: 767.98px){
+  .hero{ height:70vh; min-height:420px; }
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.custom-navbar {
+    flex: 0 0 auto;   /* 헤더는 원래 높이 그대로 */
+}
+
+.hero-banner {
+    flex: 1 1 auto;   /* 헤더를 제외한 나머지 화면을 정확히 채움 */
+    min-height: 0;
+    /* height: 50vh; ← 이 고정값은 삭제 */
+    position: relative;
+    overflow: hidden;
+    background-color: #FEF08A;
+}
+
+.hero-banner img {
+    display: block;   /* img 기본 inline 속성 때문에 생기는 미세한 틈 제거 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}

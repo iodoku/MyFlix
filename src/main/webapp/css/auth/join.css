@@ -1,0 +1,458 @@
+@charset "UTF-8";
+
+:root {
+    --minion-yellow: #FFDA1A;
+    --minion-yellow-hover: #F5C400;
+    --minion-denim: #2563EB;
+    --minion-denim-hover: #1D4ED8;
+    --minion-dark: #1C1C1E;
+    --minion-bg: #FFFDF0;
+    --minion-text: #1E293B;
+}
+
+body {
+    background-color: var(--minion-bg);
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--minion-text);
+}
+
+/* 카드 컨테이너 */
+.join-card {
+    background-color: #FFFFFF;
+    border: 3px solid #FEF08A !important;
+    border-radius: 24px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+}
+
+.join-title {
+    font-family: 'Jua', 'Noto Sans KR', sans-serif;
+    font-size: 2.2rem;
+    color: var(--minion-dark);
+    text-align: center;
+}
+
+/* 폼 레이아웃 유틸리티 */
+.form-label-custom {
+    width: 130px;
+    flex-shrink: 0;
+    font-weight: 700;
+    color: var(--minion-dark);
+}
+
+.input-w-sm {
+    max-width: 200px;
+}
+
+.input-email {
+    width: 120px;
+}
+
+.select-email {
+    width: 135px;
+}
+
+/* 📌 인라인 스타일 제거: 비밀번호 안내 문구 좌측 들여쓰기 클래스 */
+.form-msg-indent {
+    padding-left: 130px;
+}
+
+/* Input & Select 공통 커스텀 */
+.form-control-custom, .form-select-custom {
+    border: 2px solid #E2E8F0 !important;
+    border-radius: 12px !important;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.form-control-custom:focus, .form-select-custom:focus {
+    border-color: var(--minion-yellow) !important;
+    box-shadow: 0 0 0 4px rgba(255, 218, 26, 0.25) !important;
+    outline: none;
+}
+
+/* 💛 노란색 기능성 보조 버튼 (중복검사, 인증발송 등) */
+button.btn-minion-sub, a.btn-minion-sub {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #FFE066 !important;
+    color: var(--minion-dark) !important;
+    font-weight: 800 !important;
+    font-size: 0.88rem !important;
+    padding: 8px 16px !important;
+    border-radius: 12px !important;
+    border: none !important;
+    box-shadow: 0 3px 0px #D9A800 !important;
+    transition: all 0.15s ease-in-out !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+}
+
+button.btn-minion-sub:hover, a.btn-minion-sub:hover {
+    background-color: #FFD54F !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(255, 218, 26, 0.4) !important;
+}
+
+button.btn-minion-sub:active, a.btn-minion-sub:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0px #D9A800 !important;
+}
+
+/* 💙 입체감 넘치는 데님 블루 메인 버튼 (가입하기) */
+button.btn-minion-main {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: var(--minion-denim) !important;
+    color: #FFFFFF !important;
+    font-weight: 800 !important;
+    font-size: 1.05rem !important;
+    min-width: 140px;
+    height: 48px !important;
+    border-radius: 30px !important;
+    border: none !important;
+    box-shadow: 0 4px 0px #1E40AF, 0 6px 12px rgba(37, 99, 235, 0.3) !important;
+    transition: all 0.15s ease-in-out !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+}
+
+button.btn-minion-main:hover {
+    background-color: var(--minion-denim-hover) !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0px #1E40AF, 0 10px 16px rgba(37, 99, 235, 0.4) !important;
+}
+
+button.btn-minion-main:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0px #1E40AF, 0 3px 6px rgba(37, 99, 235, 0.2) !important;
+}
+
+/* 회색 취소 버튼 */
+a.btn-minion-cancel {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #F1F5F9 !important;
+    color: #475569 !important;
+    font-weight: 700 !important;
+    font-size: 1.05rem !important;
+    min-width: 110px;
+    height: 48px !important;
+    border-radius: 30px !important;
+    border: 2px solid #CBD5E1 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease !important;
+}
+
+a.btn-minion-cancel:hover {
+    background-color: #E2E8F0 !important;
+    color: var(--minion-dark) !important;
+}
+
+/* 메시지 안내문 폰트 스타일 */
+.msg-text {
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+.msg-error {
+    color: #DC2626 !important; /* 빨간색 */
+}
+
+.msg-info, .msg-success {
+    color: var(--minion-denim) !important; /* 데님 블루 */
+}
+
+/* 반응형 대응 (모바일 등 작은 화면에서 라벨 들여쓰기 초기화) */
+@media (max-width: 576px) {
+    .form-msg-indent {
+        padding-left: 0;
+    }
+}
+
+/* =========================================
+   헤더 반응형
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .custom-navbar {
+        padding: 10px 18px;
+    }
+
+    .custom-navbar > .container-fluid {
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+
+    /* 가운데 메뉴 absolute 해제 */
+    .review-nav {
+        position: static;
+        transform: none;
+        width: auto;
+        flex: 1;
+        min-width: 0;
+        gap: 7px !important;
+    }
+
+    /* 모든 버튼 크기 축소 */
+    .nav-pill-btn {
+        font-size: 0.88rem;
+        padding: 7px 17px;
+        border-radius: 20px;
+    }
+
+    /* 닉네임 영역 */
+    .nav-user {
+        font-size: 0.84rem;
+        padding: 6px 13px;
+        gap: 5px;
+    }
+}
+
+
+/* =========================================
+   태블릿
+========================================= */
+
+@media (max-width: 850px) {
+
+    .custom-navbar {
+        padding: 9px 14px;
+    }
+
+    .custom-navbar > .container-fluid {
+        justify-content: center !important;
+        gap: 7px;
+    }
+
+    /* 로고 */
+    .custom-navbar > .container-fluid > div:first-child {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* 가운데 메뉴 */
+    .review-nav {
+        order: 2;
+        flex: 0 0 auto;
+        justify-content: center;
+        gap: 6px !important;
+    }
+
+    /* 오른쪽 영역 */
+    .custom-navbar > .container-fluid > div:last-child {
+        order: 3;
+    }
+
+    /* 버튼 더 축소 */
+    .nav-pill-btn {
+        font-size: 0.78rem;
+        padding: 6px 13px;
+        border-radius: 18px;
+        box-shadow: 0 3px 0 #D9A800;
+    }
+
+    /* 닉네임 */
+    .nav-user {
+        font-size: 0.76rem;
+        padding: 5px 10px;
+        border-radius: 18px;
+        box-shadow: 0 3px 0 #93C5FD;
+    }
+
+    /* 로고 */
+    .navbar-brand-logo {
+        font-size: 1.2rem;
+        padding: 5px 14px;
+        gap: 5px;
+    }
+
+    .navbar-brand-logo .logo-img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+/* =========================================
+   모바일
+========================================= */
+
+@media (max-width: 600px) {
+
+    /* 카드 */
+    .join-card {
+        padding: 22px 14px !important;
+        border-radius: 18px !important;
+    }
+
+    /* 제목 */
+    .join-title {
+        font-size: 1.45rem !important;
+    }
+
+    /* 각 입력 행 */
+    .join-card .d-flex.align-items-center {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        width: 100%;
+        gap: 6px !important;
+    }
+
+    /* 라벨 */
+    .join-card .form-label-custom {
+        display: block !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        font-size: 0.82rem !important;
+        margin-bottom: 2px !important;
+    }
+
+    /* 일반 입력창 */
+    .join-card .input-w-sm {
+        display: block !important;
+        width: auto !important;
+        max-width: none !important;
+        min-width: 0 !important;
+        flex: 1 1 0 !important;
+        height: 36px !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* 중복검사 / 비밀번호 보기 */
+    .join-card button.btn-minion-sub {
+        display: inline-flex !important;
+        flex: 0 0 auto !important;
+        width: auto !important;
+        height: 36px !important;
+        padding: 5px 9px !important;
+        font-size: 0.68rem !important;
+        white-space: nowrap !important;
+    }
+
+    /* 메시지는 다음 줄 */
+    .join-card .msg-text {
+        display: block !important;
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        margin-left: 0 !important;
+        font-size: 0.68rem !important;
+    }
+
+    /* 비밀번호 안내문 */
+    .join-card .form-msg-indent {
+        padding-left: 0 !important;
+    }
+
+    /* =========================================
+       이메일
+    ========================================= */
+
+    .join-card .input-email {
+        width: 0 !important;
+        min-width: 0 !important;
+        flex: 1 1 0 !important;
+        height: 36px !important;
+    }
+
+    .join-card .select-email {
+        width: 100% !important;
+        height: 36px !important;
+        margin-top: 2px;
+    }
+
+    #sendEmailCode {
+        width: 100% !important;
+        height: 36px !important;
+        margin-top: 2px;
+    }
+
+    /* 이메일 인증번호 */
+    #emailcode {
+        width: 0 !important;
+        min-width: 0 !important;
+        flex: 1 1 0 !important;
+        height: 36px !important;
+    }
+
+    #verifyEmailCode {
+        flex: 0 0 auto !important;
+        height: 36px !important;
+    }
+
+
+    /* =========================================
+       하단 버튼
+    ========================================= */
+
+    .join-card form > .d-flex.justify-content-center {
+        flex-wrap: nowrap !important;
+        gap: 7px !important;
+    }
+
+    .join-card .btn-minion-main,
+    .join-card .btn-minion-cancel {
+        min-width: 90px !important;
+        width: auto !important;
+        height: 40px !important;
+        font-size: 0.78rem !important;
+    }
+}
+
+
+/* =========================================
+   400px 이하
+========================================= */
+
+@media (max-width: 400px) {
+
+    .join-card {
+        padding: 18px 10px !important;
+    }
+
+    .join-title {
+        font-size: 1.25rem !important;
+    }
+
+    .join-card .form-label-custom {
+        font-size: 0.74rem !important;
+    }
+
+    .join-card .input-w-sm {
+        height: 33px !important;
+        font-size: 0.73rem !important;
+    }
+
+    .join-card button.btn-minion-sub {
+        height: 33px !important;
+        padding: 4px 7px !important;
+        font-size: 0.62rem !important;
+    }
+
+    .join-card .msg-text {
+        font-size: 0.62rem !important;
+    }
+
+    .join-card .input-email,
+    .join-card #emailcode {
+        height: 33px !important;
+        font-size: 0.7rem !important;
+    }
+
+    .join-card .select-email,
+    .join-card #sendEmailCode {
+        height: 33px !important;
+    }
+
+    .join-card .btn-minion-main,
+    .join-card .btn-minion-cancel {
+        min-width: 80px !important;
+        height: 36px !important;
+        font-size: 0.7rem !important;
+    }
+}

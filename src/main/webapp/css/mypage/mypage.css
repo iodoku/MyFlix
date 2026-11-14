@@ -1,0 +1,359 @@
+@charset "UTF-8";
+
+/* 1. 글로벌 스타일 및 컬러 시스템 연동 */
+:root {
+    --minion-bg: #FFFDF0;           /* 바나나 크림 배경 */
+    --minion-yellow: #FFDA1A;       /* 미니언 시그니처 옐로우 */
+    --minion-dark: #1C1C1E;         /* 고글 스트랩 딥 챠콜 */
+    --cinema-dark: #1F2E35;         /* 메인 히어로 딥 네이비 */
+    --cinema-gold: #E7B85C;         /* 시네마틱 골드 포인트 */
+    --minion-denim: #2563EB;        /* 멜빵바지 데님 블루 */
+}
+
+body {
+    background-color: var(--minion-bg);
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--minion-dark);
+}
+
+/* 2. 레이아웃 컨테이너 커스텀 */
+.mypage-container {
+    max-width: 1200px;
+    width: 100%;
+    background: #ffffff;
+    border: 3px solid var(--minion-dark);
+    border-radius: 24px;
+    box-shadow: 6px 6px 0px rgba(28, 28, 30, 0.15);
+}
+
+/* 마이페이지 상단 뱃지 */
+.mypage-user-badge {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+/* 3. 시네마틱 타이틀 & 카드 헤더 */
+.mypage-title {
+    font-family: 'Jua', sans-serif;
+    font-size: 2.2rem;
+    color: var(--cinema-dark);
+    letter-spacing: -0.02em;
+}
+.mypage-title em {
+    color: var(--cinema-gold);
+    font-style: italic;
+    font-weight: normal;
+}
+.form-card-title {
+    color: var(--cinema-dark);
+}
+
+/* 4. 좌측 사이드바 메뉴 디자인 */
+.mypage-menu .nav-link {
+    color: #4A5568;
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 12px 20px;
+    border-radius: 30px;
+    margin-bottom: 0.5rem;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+}
+.mypage-menu .nav-link:hover:not(.active) {
+    background-color: #FFFCE6;
+    color: var(--cinema-dark);
+    transform: translateX(4px);
+}
+.mypage-menu .nav-link.active {
+    background-color: var(--minion-yellow) !important;
+    color: var(--minion-dark) !important;
+    border-color: var(--minion-dark);
+    box-shadow: 0 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* 5. 폼 컨트롤러 커스텀 & 폼 너비 가이드 */
+.form-select-custom, .form-control-custom {
+    border: 2px solid var(--minion-dark);
+    border-radius: 12px !important;
+    font-weight: 500;
+}
+.form-select-custom:focus, .form-control-custom:focus {
+    border-color: var(--minion-denim);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+/* 폼 영역 너비 제어 클래스 */
+.search-input-box {
+    width: 160px;
+}
+.form-pw-wrap {
+    max-width: 480px;
+}
+.form-nick-wrap {
+    max-width: 460px;
+}
+.form-email-wrap {
+    max-width: 580px;
+}
+.email-select-box {
+    font-size: 0.9rem;
+}
+.email-at-sign {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--minion-dark);
+    padding: 0 4px;
+}
+
+/* 6. 데이터 테이블 커스텀 */
+.custom-table {
+    border: 2px solid var(--minion-dark);
+    border-radius: 16px;
+    overflow: hidden;
+    border-collapse: separate;
+    width: 100%;
+}
+.custom-table thead {
+    background-color: var(--cinema-dark);
+    color: #ffffff;
+}
+.custom-table th {
+    font-weight: 700;
+    padding: 12px 14px;
+    border-bottom: 2px solid var(--minion-dark);
+    white-space: nowrap;
+}
+.custom-table td {
+    padding: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+/* 테이블 열 고정 너비 클래스 */
+.custom-table .col-num {
+    width: 70px;
+    white-space: nowrap;
+}
+.custom-table .col-title {
+    width: 28%;
+}
+.custom-table .col-author {
+    width: 110px;
+    white-space: nowrap;
+}
+.custom-table .col-rating {
+    width: 90px;
+    white-space: nowrap;
+}
+.custom-table .col-date {
+    width: 120px;
+    white-space: nowrap;
+}
+.custom-table .reply-count {
+    font-size: 0.8rem;
+}
+
+/* 별점 색상 매칭 */
+.star-rating {
+    color: var(--cinema-gold);
+    font-weight: 700;
+}
+
+.custom-table .col-content {
+    /* 🎯 테이블 안에서 글자가 자리를 차지할 수 있도록 너비 배정 (전체 화면 비율에 맞춰 자동 조절) */
+    max-width: 0;
+    width: auto; 
+    
+    /* 🎯 1줄 제한 및 넘치는 글자 ... 처리 핵심 삼총사 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 7. 페이지네이션 커스텀 */
+.custom-pagination .page-link {
+    color: var(--minion-dark);
+    border: 2px solid var(--minion-dark);
+    font-weight: 700;
+    margin: 0 3px;
+    border-radius: 10px !important;
+    transition: all 0.2s ease;
+}
+.custom-pagination .page-link:hover {
+    background-color: var(--minion-yellow);
+    transform: scale(1.05);
+}
+.custom-pagination .page-item.active .page-link {
+    background-color: var(--minion-denim);
+    border-color: var(--minion-dark);
+    color: #ffffff;
+}
+
+/* 8. 좌측 사이드바 하위 소메뉴 */
+.submenu-list {
+    list-style: none;
+    padding-left: 1.8rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.5rem;
+}
+.submenu-list li {
+    position: relative;
+    margin-bottom: 4px;
+}
+.submenu-list li a {
+    display: inline-block;
+    padding: 6px 12px;
+    color: #555555;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 15px;
+    transition: all 0.2s ease;
+}
+.submenu-list li a:hover {
+    color: var(--minion-dark);
+    background-color: #FFFCE6;
+    transform: translateX(3px);
+}
+.submenu-list li.current a {
+    color: var(--cinema-dark);
+    font-weight: 900;
+    background-color: #FFF9C4;
+    border: 1.5px solid var(--minion-dark);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+.submenu-list li.current::before {
+    content: "🍌";
+    position: absolute;
+    left: -16px;
+    top: 6px;
+    font-size: 0.85rem;
+}
+
+/* 피드백 안내 문구 */
+.form-text.text-danger {
+    font-weight: 700;
+    color: #DC2626 !important;
+}
+.form-text.text-success {
+    font-weight: 700;
+    color: #16A34A !important;
+}
+
+/* 9. MyFlix 시그니처 볼륨 버튼 (회원가입 원본 sub 버튼 스타일 100% 이식) */
+.btn-myflix-volume {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #FFE066 !important;            /* 원본 노란색 */
+    color: #1C1C1E !important;                        /* --minion-dark */
+    font-weight: 800 !important;
+    font-size: 0.88rem !important;
+    padding: 0 16px !important;                       /* 좌우 여백 고정 */
+    border-radius: 12px !important;
+    border: none !important;
+    
+    /* 🎯 [평소 상태] 원본 그대로 3px짜리 고정 입체 그림자 */
+    box-shadow: 0 3px 0px #D9A800 !important;
+    transform: none !important;
+    
+    /* 🎯 마이페이지 좌측 입력창과 높이를 완벽하게 맞추기 위한 세팅 */
+    height: 38px !important;                          
+    box-sizing: border-box;
+    transition: all 0.15s ease-in-out !important;     /* 원본 transition */
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    text-decoration: none !important;
+}
+
+/* 🎯 [Hover] 마우스를 올렸을 때: 원본 그대로 위로 1px 뜨면서 그림자가 넓게 퍼지는 효과 */
+.btn-myflix-volume:hover {
+    background-color: #FFD54F !important;             /* 원본 hover 배경색 */
+    transform: translateY(-1px) !important;            /* 위로 1px 이동 */
+    box-shadow: 0 4px 8px rgba(255, 218, 26, 0.4) !important; /* 원본 hover 그림자 */
+}
+
+/* 🎯 [Active] 클릭했을 때: 원본 그대로 아래로 2px 눌리는 효과 */
+.btn-myflix-volume:active {
+    transform: translateY(2px) !important;
+    box-shadow: 0 1px 0px #D9A800 !important;         /* 원본 active 그림자 */
+}
+
+/* 부트스트랩 인풋 그룹(.input-group)과 조립될 때 여백 및 모서리 유지 */
+.input-group > .btn-myflix-volume {
+    margin-left: 6px !important;                      /* 입력창과 6px 간격 띄움 */
+    border-top-left-radius: 12px !important;           /* 붙어도 모서리 둥글게 유지 */
+    border-bottom-left-radius: 12px !important;
+}
+
+/* 🎯 중복확인 버튼 고유 ID(#btnCheckNick) 스타일 전용 패치 */
+#btnCheckNick {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #FFE066 !important;            /* 회원가입 원본 sub 노란색 */
+    color: #1C1C1E !important;                        /* 다크 차콜 글자색 */
+    font-weight: 800 !important;
+    font-size: 0.88rem !important;
+    padding: 0 16px !important;                       /* 좌우 여백 */
+    border-radius: 12px !important;                   /* 둥근 모서리 복구 */
+    border: none !important;                          /* 부트스트랩 기본 선 제거 */
+    
+    /* [평소 상태] 3px짜리 고정 입체 그림자 */
+    box-shadow: 0 3px 0px #D9A800 !important;
+    transform: translateY(0px) !important;
+    
+    /* 인풋창과 높이를 칼같이 맞추기 위한 설정 */
+    height: 38px !important;                          
+    box-sizing: border-box;
+    transition: all 0.15s ease-in-out !important;     /* 원본 모션 트랜지션 */
+    cursor: pointer !important;
+    white-space: nowrap !important;
+}
+
+/* [Hover] 마우스를 올렸을 때 위로 1px 뜨며 그림자가 퍼지는 효과 */
+#btnCheckNick:hover {
+    background-color: #FFD54F !important;             /* 원본 hover 배경색 */
+    transform: translateY(-1px) !important;            
+    box-shadow: 0 4px 8px rgba(255, 218, 26, 0.4) !important; 
+}
+
+/* [Active] 클릭했을 때 아래로 2px 눌리는 효과 */
+#btnCheckNick:active {
+    transform: translateY(2px) !important;
+    box-shadow: 0 1px 0px #D9A800 !important;         
+}
+
+/* 부트스트랩 input-group 내부에 갇혀서 모서리가 깎이고 붙는 현상 방지 */
+.input-group > #btnCheckNick {
+    margin-left: 6px !important;                      /* 입력창과 6px 간격 벌리기 */
+    border-radius: 12px !important;                   /* 깎인 모서리 강제 재성형 */
+}
+
+/* 🎯 하단 단독 버튼으로 빠졌을 때 부트스트랩 왼쪽 마진 간격 초기화 */
+.text-center > #btnSubmitNick {
+    margin-left: 0 !important;
+}
+
+/* 피드백 안내 문구 공통 스타일 */
+#nickCheckMsg, #newPwCheckMsg, #pwConfirmMsg {
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+/* ❌ 실패 / 경고 / 미통과 (어디서든 msg-error가 붙으면 빨간색) */
+.msg-error {
+    color: #DC2626 !important;
+}
+
+/* 💙 최종 성공 / 조건 통과 (어디서든 msg-success가 붙으면 데님 블루) */
+.msg-success {
+    color: var(--minion-denim) !important; /* #2563EB */
+}
+
+/* 닉네임 변경 폼 내부의 현재 정보 박스 너비 조절 */
+#nickForm .bg-light {
+    max-width: 460px; /* 아래 입력창 너비 가이드인 .form-nick-wrap과 똑같이 맞춥니다. */
+    width: 100%;
+}
